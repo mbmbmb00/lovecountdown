@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head> 
+        <title>mb and jhon anniv countdown</title>
+        <style>
+            #normal {
+                border-radius: 30px;
+                display: block;
+                 margin-left: auto;
+                 margin-right: auto;
+                width: 50%;
+                opacity: 27%;
+                width: 1300px;
+                height: 444px;
+                
+                
+      
+}          
+
+div.obraz{
+    display: block;
+                 margin-left: auto;
+                 margin-right: auto;
+    width: 1310px;
+    border-radius: 30px;
+    border-color: aliceblue;
+    border-style: dotted;
+    border-width: 20px;
+   
+}
+
+            p.username{
+                font-size: 100px;
+            }
+        
+            #time-since {
+    font-size: 100px;
+    color: white;
+    text-align:center;
+    text-align: center;
+    position:relative;
+    bottom: -360px;
+    width: 100%;
+    display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100px;
+  width: 100%;
+  }
+
+  p.napis{
+    font-size: 90px;
+    color: white;
+    text-align:center;
+    text-align: center;
+    position:relative;
+    bottom: 450px;
+    width: 100%;
+    display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100px;
+  width: 100%;
+  }
+        </style>
+          <div id="time-since"></div>
+
+          <script>
+          function timeDifference(date) {
+            const today = new Date();
+            const diff = today - date;
+          
+            const oneYear = 1000 * 60 * 60 * 24 * 365.25;
+            const oneMonth = 1000 * 60 * 60 * 24 * 30.44;
+            const oneDay = 1000 * 60 * 60 * 24;
+            const oneHour = 1000 * 60 * 60;
+            const oneMinute = 1000 * 60;
+            const oneSecond = 1000;
+          
+            const years = Math.floor(diff / oneYear);
+            const months = Math.floor((diff % oneYear) / oneMonth);
+            const days = Math.floor((diff % oneMonth) / oneDay);
+            const hours = Math.floor((diff % oneDay) / oneHour);
+            const minutes = Math.floor((diff % oneHour) / oneMinute);
+            const seconds = Math.floor((diff % oneMinute) / oneSecond);
+          
+            return {
+              years: years,
+              months: months,
+              days: days,
+              hours: hours,
+              minutes: minutes,
+              seconds: seconds,
+            };
+          }
+          
+          const date = new Date("2021-03-15");
+          const timeSince = document.querySelector("#time-since");
+          
+          setInterval(() => {
+            const difference = timeDifference(date);
+            timeSince.innerHTML = `           
+            ${difference.years} y, ${difference.months} m, ${difference.days} d, ${difference.hours} h, ${difference.minutes} m, ${difference.seconds} s`;
+          }, 1000);
+          </script>
+<p id="demo"></p>
+
+
+    </head>
+    <body style="background-color:rgba(255, 159, 115, 0.696);">  
+
+    <div> 
+
+        <div class="obraz">
+            
+        <img src="https://cdn.discordapp.com/attachments/677165770710712340/1070030154463727796/Project_Capture.jpg" alt="me and jhon" id="normal" >
+    </div>
+    <p class="napis"> we've been together for... </p>
+    </div>
+
+
+    </body>
+</html>
